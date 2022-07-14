@@ -38,3 +38,7 @@ td {
 input[type=number] {
     width: 6em;
 }
+
+.selected {
+  border: 3px solid red;
+}
