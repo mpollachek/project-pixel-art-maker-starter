@@ -5,9 +5,12 @@ const colorSelected = document.querySelector("#colorPicker");
 const size = document.querySelector("#sizePicker");
 
 //function to create table
-const makeGrid = (h, w) => {
+const makeGrid = () => {
   //create div for table
   const myDiv = document.createElement("div");
+  //set h and w to height and width values input by user
+  const h = height.value;
+  const w = width.value;
   //calculate width of table div
   setWidth = 25 * w;
   //give myDiv an id for querySelector, width and auto margin for centering
@@ -38,17 +41,15 @@ const makeGrid = (h, w) => {
   document.body.appendChild(myDiv);
 };
 
-//when form is submitted set h and w to height and width, remove previous grid if there is one.  prevent default stops form from submitting.
+//when form is submitted remove previous grid if there is one.  prevent default stops form from submitting.
 size.addEventListener("submit", function (e) {
   e.preventDefault();
-  const h = height.value;
-  const w = width.value;
   const divToRemove = document.querySelector("#myDiv");
   if (divToRemove) {
     divToRemove.remove();
   }
   //call makeGrid function with h and w arguments
-  makeGrid(h, w);
+  makeGrid();
 });
 
 //when a color is selected, set all boxes with "selected" class to the selected color.
