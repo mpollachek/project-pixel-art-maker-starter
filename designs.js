@@ -1,6 +1,6 @@
 const makeGrid = (h, w) => {
   const myDiv = document.createElement("div");
-  setWidth = 22 * w;
+  setWidth = 25 * w;
   myDiv.setAttribute("id", "myDiv");
   myDiv.style.width = `${setWidth}px`;
   myDiv.style.margin = "auto";
